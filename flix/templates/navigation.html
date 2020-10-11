@@ -1,0 +1,24 @@
+<nav id="nav">
+    <img id="logo" src="{{ url_for('static', filename='CSFlix.png') }}"/>
+    <h2 id="nav-header">
+        {% if 'username' in session %} Welcome Back, {{ session['username'] }} ! {% endif  %}
+    </h2>
+    <a class="btn-nav" href="{{ url_for('home_bp.home') }}">Home</a>
+    {% if 'username' not in session %}
+    <a class="btn-nav" href="{{ url_for('authentication_bp.register') }}">Register</a>
+    <a class="btn-nav" href="{{ url_for('authentication_bp.login') }}">Login</a>
+    {% endif %}
+    {% if 'username' in session %}
+    <a class="btn-nav" href="{{ url_for('authentication_bp.logout') }}">Logout</a>
+    {% endif %}
+    <div>
+        <h3 id="sub-nav-header">Browse</h3>
+        <a class="btn-nav" href="{{ url_for('browse_bp.browse_by_year') }}">Browse By Year</a>
+        <a class="btn-nav" href="{{ url_for('browse_bp.browse_by_actors') }}">Browse By Actors</a>
+        <a class="btn-nav" href="{{ url_for('browse_bp.browse_by_genres') }}">Browse By Genres</a>
+        <a class="btn-nav" href="{{ url_for('browse_bp.browse_by_directors') }}">Browse By Directors</a>
+    </div>
+    <div id="nav-footer">
+        COMPSCI 235 Software Development Methodologies
+    </div>
+</nav>

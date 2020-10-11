@@ -1,0 +1,11 @@
+{% extends 'layout.html' %} {% block content %}
+<main id="main">
+  <h1>
+      Movies you may be interested in:
+  </h1>
+  <br>
+    {% for movie in movies %}
+        <p id="movie-description">{{ movie.title }}, {{ movie.release_year }}</p>
+    {% endfor %}
+</main>
+{% endblock %}

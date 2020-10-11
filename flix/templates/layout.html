@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>CS235FLIX</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+    <link rel="bookmark" type="image/x-icon" href="../static/favicon.ico"/>
+    <link rel="icon" href="../static/favicon.ico"/>
+  </head>
+  <body>
+      <div id="body">
+      {% include 'navigation.html' %}
+          <div id="content-2">
+            {% include 'header.html' %}
+              <div id="container">
+                {% block content %} {% endblock %}
+                {% include 'sidebar.html' %}
+              </div>
+        </div>
+      </div>
+  </body>
+</html>
